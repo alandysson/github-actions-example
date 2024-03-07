@@ -1,6 +1,8 @@
 name: First Workflow
 
 on:
+  workflow_dispatch:
+
   push:
     branches:
       - main
@@ -15,5 +17,4 @@ jobs:
 
       - name: Build Docker image
         run: |
-          sudo docker build -t ${{ vars.IMAGE_ADDRESS }} .
-          sudo docker push ${{ vars.IMAGE_ADDRESS }}
+          echo "my address: ${{ vars.IMAGE_ADDRESS }}"
