@@ -15,4 +15,4 @@ jobs:
 
       - name: Build Docker image
         run: |
-          echo ${{ secrets.IMAGE_ADDRESS }}
+          echo "${{ secrets.IMAGE_ADDRESS }}""
