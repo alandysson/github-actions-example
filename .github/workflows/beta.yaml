@@ -15,4 +15,5 @@ jobs:
 
       - name: Build Docker image
         run: |
-          echo "${{secrets.ADDRESS}}"
+          sudo docker build -t "${{secrets.ADDRESS}} .
+          sudo docker push "${{secrets.ADDRESS}}"
