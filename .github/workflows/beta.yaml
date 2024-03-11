@@ -28,4 +28,3 @@ jobs:
           platform: "managed"
           region: "us-central1"
           # service-account-key: ${{ secrets.GCP_SA_KEY }}
-```
