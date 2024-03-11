@@ -17,7 +17,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ${{ vars.IMAGE_ADDRESS }} .
+          "docker build -t ${{ vars.IMAGE_ADDRESS }} ."
       - name: Push Docker image
         run: |
           docker push ${{ vars.IMAGE_ADDRESS }}
