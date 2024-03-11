@@ -15,16 +15,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-jobs: 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to Cloud Run
-        uses: google-github-actions/deploy-cloudrun@v2
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0.2.0
         with:
-          service: "hello-cloud-run"
           image: ${{ vars.IMAGE_ADDRESS }}
-          platform: "managed"
-          region: "us-central1"
-          # service-account-key: ${{ secrets.GCP_SA_KEY }}
+          service: "hello-cloud-run"
