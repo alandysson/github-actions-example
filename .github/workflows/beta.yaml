@@ -20,3 +20,13 @@ jobs:
         with:
           image: ${{ vars.IMAGE_ADDRESS }}
           service: "hello-cloud-run"
+      - name: Deploy to Cloud Run
+        uses: google-github-actions/deploy-cloudrun@v0.2.0
+        with:
+          service: "hello-cloud-run"
+          image: ${{ vars.IMAGE_ADDRESS }}
+          platform: "managed"
+          region: "us-central1"
+          # project_id: ${{ secrets.GCP_PROJECT_ID }}
+          # service_account_key: ${{ secrets.GCP_SA_KEY }}
+          args: "--allow-unauthenticated"
