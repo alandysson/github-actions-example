@@ -8,9 +8,6 @@ on:
       - main
 
 jobs:
-  permissions:
-    contents: "read"
-    id-token: "write"
   build:
     runs-on: ubuntu-latest
 
